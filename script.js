@@ -179,17 +179,9 @@ function rps (playerChoice, computerChoice){
 }
 
 
-function startGame(){
+function checkConditions(){
 
-    let playerWon = 0;
-    let computerWon = 0;
-    let tieGame = 0;
-        
-    
-    
-    
-        
-
+   
         if(winner == 2){
             computerWon++;
         }
@@ -201,38 +193,74 @@ function startGame(){
         }
 
 
-  
-
-        
-
-
-
-
-   
-
-    console.log("The game had " + tieGame + " ties.");
-    console.log("The computer won " + computerWon + " times.");
-    console.log("The player won " + playerWon + " times.");
     
-    if(playerWon == 5){
+    if(playerWon === 5){
 
-        console.log("You Won!");
+        tied.innerHTML = "YOU WIN!";
+        player1.innerHTML = "YOU WIN!";
+        cpu1.innerHTML = "YOU WIN!";
+
+        playerChoice1.innerHTML = "YOU WIN!";
+        cpuChoice1.innerHTML = "YOU WIN!";
+        currentWinner.innerHTML = "YOU WIN!";
+        result = 0;
+        tiedAmount = 0;
+        playerWonAmount = 0;
+        cpuWonAmount = 0;
+        winner = 0;
+
+        playerWon = 0;
+        computerWon = 0;
+        tieGame = 0;
+
     }
-    if(computerWon == 5){
+    if(computerWon === 5){
 
-        console.log("You Lost!");
+        tied.innerHTML = "You Lost...";
+        player1.innerHTML = "You Lost...";
+        cpu1.innerHTML = "You Lost...";
+
+        playerChoice1.innerHTML = "You Lost...";
+        cpuChoice1.innerHTML = "You Lost...";
+        currentWinner.innerHTML = "You Lost...";
+        result = 0;
+        tiedAmount = 0;
+        playerWonAmount = 0;
+        cpuWonAmount = 0;
+        winner = 0;
+
+         playerWon = 0;
+        computerWon = 0;
+        tieGame = 0;
     }
-
-
 
 
 }
 
-//btnStart.addEventListener('click', () => {
 
-    startGame();
+btnStart.addEventListener('click', () =>{
     
- // });
+
+     result = 0;
+    tiedAmount = 0;
+    playerWonAmount = 0;
+    cpuWonAmount = 0;
+    winner = 0;
+
+     playerWon = 0;
+     computerWon = 0;
+     tieGame = 0;
+
+    tied.innerHTML = tiedAmount.toString();
+    player1.innerHTML = playerWonAmount.toString();
+    cpu1.innerHTML = cpuWonAmount.toString();
+
+    playerChoice1.innerHTML = "None";
+    cpuChoice1.innerHTML = "None";
+    currentWinner.innerHTML = "None";
+    
+
+});
 
 
 
@@ -241,32 +269,16 @@ function startGame(){
   btnRock.addEventListener('click', () =>{
     playerChoice = "rock"
     computerChoice = getComputerChoice();
-    winner = winner + rps(playerChoice, computerChoice);
-    if(winner == 2){
-        computerWon++;
-    }
-    else if(winner == 1){
-        playerWon++;
-    }
-    else{
-        tieGame++;
-    }
+    winner = rps(playerChoice, computerChoice);
+    checkConditions();
 });
 
 
 btnPaper.addEventListener('click', () =>{
     playerChoice = "paper"
     computerChoice = getComputerChoice();
-    winner = winner + rps(playerChoice, computerChoice);
-    if(winner == 2){
-        computerWon++;
-    }
-    else if(winner == 1){
-        playerWon++;
-    }
-    else{
-        tieGame++;
-    }
+    winner = rps(playerChoice, computerChoice);
+    checkConditions();
 
 });
 
@@ -275,16 +287,8 @@ btnPaper.addEventListener('click', () =>{
 btnScissors.addEventListener('click', () =>{
     playerChoice = "scissors"
     computerChoice = getComputerChoice();
-    winner = winner + rps(playerChoice, computerChoice);
-    if(winner == 2){
-        computerWon++;
-    }
-    else if(winner == 1){
-        playerWon++;
-    }
-    else{
-        tieGame++;
-    }
+    winner = rps(playerChoice, computerChoice);
+    checkConditions();
 
 });
 
