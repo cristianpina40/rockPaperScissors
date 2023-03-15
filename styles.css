@@ -1,0 +1,107 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: #a28089;
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    
+    background-color: #fff5d7;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%;
+    
+    padding: 3%;
+    
+    border:solid #ffde22;
+    
+}
+.displayTop{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    padding: 5%;
+    border-radius: 20px;
+    margin:5%;
+    border: solid black;
+    background-color: white;
+
+}
+.displayLeft{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-right: 10%;
+
+
+
+}
+
+p{
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.displayRight{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-left: 10%;
+
+
+}
+.buttons{
+
+    display: flex;
+    
+    justify-content: center;
+    align-content: center;
+    
+    
+    padding-top: 5%;
+    flex-direction: row;
+
+  
+    
+
+}
+
+button{
+
+    margin: 2%;
+    height: 40px;
+    width: 20%;
+    overflow:hidden;
+    border-radius: 10px;
+    color: black;
+    background-color: #fea49f;
+    
+
+    
+}
+
+.end{
+
+    display:flex;
+    align-content: center;
+    justify-content: center;
+
+}
+
+
+

@@ -1,6 +1,25 @@
 
 let playerChoice = "";
 let computerChoice = "";
+const btnRock = document.querySelector('.rock');
+const btnPaper = document.querySelector('.paper');
+const btnScissors = document.querySelector('.scissors');
+const btnStart = document.querySelector('.startGame');
+
+const tied = document.getElementsByClassName('tied1')[0];
+const cpu1 = document.getElementsByClassName('cpu1')[0];
+const player1 = document.getElementbyClassName('player1')[0];
+
+const playerChoice1 = document.getElementsByClassName('playerChoice1')[0];
+const cpuChoice1 = document.getElementsByClassName('cpuChoice1')[0];
+const currentWinner = document.getElementsByClassName('currentWinner1')[0];
+
+let result = 0;
+let tiedAmount = 0;
+let playerWonAmount = 0;
+let cpuWonAmount = 0;
+
+
 
 
 function getComputerChoice (){
@@ -33,60 +52,111 @@ function rps (playerChoice, computerChoice){
     let player = playerChoice.toLowerCase();
     let computer = computerChoice.toLowerCase();
 
-    let result = 0;
+    
+
     
 
     if(player == computer)
     {
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("The game is a tie!");
+        tiedAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Tie";
+       
         result = 3;
 
     }
     else if(player == "scissors" && computer == "paper"){
         
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("You won!");
+        playerWonAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Player";
+        
         result = 1;
     }
     else if(player == "scissors" && computer == "rock"){
         
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("The computer won!");
+        
+        cpuWonAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Tie";
+
         result = 2;
     }
 
     else if(player == "rock" && computer == "scissors"){
         
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("You won!");
+        playerWonAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Player";
+        
         result = 1;
     }
     else if(player == "rock" && computer == "paper"){
         
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("The computer won!");
+        cpuWonAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Tie";
+
         result = 2;
 
     }
 
     else if(player == "paper" && computer == "rock"){
        
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("You won!");
+        playerWonAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Player";
+        
         result = 1;
     }
     else if(player == "paper" && computer == "scissors"){
         
-        console.log("You chose " + player + ".");
-        console.log("The computer chose " + computer + ".");
-        console.log("The computer won!");
+        cpuWonAmount++;
+        
+        tied.innerText = tiedAmount.toString();
+        player1.innerText = playerWonAmount.toString();
+        cpu1.innerText = cpuWonAmount.toString();
+
+        playerChoice1.innerText = player;
+        cpuChoice1.innerText = computer;
+        currentWinner.innerText = "Tie";
+
         result = 2;
     }
     else{
@@ -102,16 +172,33 @@ function rps (playerChoice, computerChoice){
 }
 
 
-function playGame(){
+function startGame(){
 
         let playerWon = 0;
         let computerWon = 0;
         let tieGame = 0;
+        
     
     do{
+       
+        btnRock.addEventListener('click', () =>{
+            playerChoice = "rock"
+        });
+        
+        
+        btnPaper.addEventListener('click', () =>{
+            playerChoice = "paper"
+        });
+        
+        
+        
+        btnScissors.addEventListener('click', () =>{
+            playerChoice = "scissors"
+        });
 
-        playerChoice = prompt("Choose Rock Player or Scissors");
+        
         computerChoice = getComputerChoice();
+        
         let winner = rps(playerChoice, computerChoice);
         
 
@@ -153,7 +240,22 @@ function playGame(){
 
 }
 
-playGame();
+btnStart.onclick = startGame();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
