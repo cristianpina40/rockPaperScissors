@@ -6,18 +6,23 @@ const btnPaper = document.querySelector('.paper');
 const btnScissors = document.querySelector('.scissors');
 const btnStart = document.querySelector('.startGame');
 
-const tied = document.getElementsByClassName('tied1')[0];
-const cpu1 = document.getElementsByClassName('cpu1')[0];
-const player1 = document.getElementbyClassName('player1')[0];
+const tied = document.querySelector('.tied1');
+const cpu1 = document.querySelector('.cpu1');
+const player1 = document.querySelector('.player1');
 
-const playerChoice1 = document.getElementsByClassName('playerChoice1')[0];
-const cpuChoice1 = document.getElementsByClassName('cpuChoice1')[0];
-const currentWinner = document.getElementsByClassName('currentWinner1')[0];
+const playerChoice1 = document.querySelector('.playerChoice1');
+const cpuChoice1 = document.querySelector('.cpuChoice1');
+const currentWinner = document.querySelector('.currentWinner1');
 
 let result = 0;
 let tiedAmount = 0;
 let playerWonAmount = 0;
 let cpuWonAmount = 0;
+let winner = 0;
+
+let playerWon = 0;
+let computerWon = 0;
+let tieGame = 0;
 
 
 
@@ -60,13 +65,15 @@ function rps (playerChoice, computerChoice){
     {
         tiedAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Tie";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Tie";
+       
        
         result = 3;
 
@@ -75,13 +82,13 @@ function rps (playerChoice, computerChoice){
         
         playerWonAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Player";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Player";
         
         result = 1;
     }
@@ -90,13 +97,13 @@ function rps (playerChoice, computerChoice){
         
         cpuWonAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Tie";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Tie";
 
         result = 2;
     }
@@ -105,13 +112,13 @@ function rps (playerChoice, computerChoice){
         
         playerWonAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Player";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Player";
         
         result = 1;
     }
@@ -119,13 +126,13 @@ function rps (playerChoice, computerChoice){
         
         cpuWonAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Tie";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Tie";
 
         result = 2;
 
@@ -135,13 +142,13 @@ function rps (playerChoice, computerChoice){
        
         playerWonAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Player";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Player";
         
         result = 1;
     }
@@ -149,13 +156,13 @@ function rps (playerChoice, computerChoice){
         
         cpuWonAmount++;
         
-        tied.innerText = tiedAmount.toString();
-        player1.innerText = playerWonAmount.toString();
-        cpu1.innerText = cpuWonAmount.toString();
+        tied.innerHTML = tiedAmount.toString();
+        player1.innerHTML = playerWonAmount.toString();
+        cpu1.innerHTML = cpuWonAmount.toString();
 
-        playerChoice1.innerText = player;
-        cpuChoice1.innerText = computer;
-        currentWinner.innerText = "Tie";
+        playerChoice1.innerHTML = player;
+        cpuChoice1.innerHTML = computer;
+        currentWinner.innerHTML = "Tie";
 
         result = 2;
     }
@@ -174,32 +181,13 @@ function rps (playerChoice, computerChoice){
 
 function startGame(){
 
-        let playerWon = 0;
-        let computerWon = 0;
-        let tieGame = 0;
+    let playerWon = 0;
+    let computerWon = 0;
+    let tieGame = 0;
         
     
-    do{
-       
-        btnRock.addEventListener('click', () =>{
-            playerChoice = "rock"
-        });
-        
-        
-        btnPaper.addEventListener('click', () =>{
-            playerChoice = "paper"
-        });
-        
-        
-        
-        btnScissors.addEventListener('click', () =>{
-            playerChoice = "scissors"
-        });
-
-        
-        computerChoice = getComputerChoice();
-        
-        let winner = rps(playerChoice, computerChoice);
+    
+    
         
 
         if(winner == 2){
@@ -213,14 +201,14 @@ function startGame(){
         }
 
 
-
+  
 
         
 
 
 
 
-    }while(playerWon < 5 && computerWon < 5)
+   
 
     console.log("The game had " + tieGame + " ties.");
     console.log("The computer won " + computerWon + " times.");
@@ -240,12 +228,65 @@ function startGame(){
 
 }
 
-btnStart.onclick = startGame();
+//btnStart.addEventListener('click', () => {
+
+    startGame();
+    
+ // });
 
 
 
 
 
+  btnRock.addEventListener('click', () =>{
+    playerChoice = "rock"
+    computerChoice = getComputerChoice();
+    winner = winner + rps(playerChoice, computerChoice);
+    if(winner == 2){
+        computerWon++;
+    }
+    else if(winner == 1){
+        playerWon++;
+    }
+    else{
+        tieGame++;
+    }
+});
+
+
+btnPaper.addEventListener('click', () =>{
+    playerChoice = "paper"
+    computerChoice = getComputerChoice();
+    winner = winner + rps(playerChoice, computerChoice);
+    if(winner == 2){
+        computerWon++;
+    }
+    else if(winner == 1){
+        playerWon++;
+    }
+    else{
+        tieGame++;
+    }
+
+});
+
+
+
+btnScissors.addEventListener('click', () =>{
+    playerChoice = "scissors"
+    computerChoice = getComputerChoice();
+    winner = winner + rps(playerChoice, computerChoice);
+    if(winner == 2){
+        computerWon++;
+    }
+    else if(winner == 1){
+        playerWon++;
+    }
+    else{
+        tieGame++;
+    }
+
+});
 
 
 
