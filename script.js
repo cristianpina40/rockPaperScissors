@@ -103,7 +103,7 @@ function rps (playerChoice, computerChoice){
 
         playerChoice1.innerHTML = player;
         cpuChoice1.innerHTML = computer;
-        currentWinner.innerHTML = "Tie";
+        currentWinner.innerHTML = "CPU";
 
         result = 2;
     }
@@ -132,7 +132,7 @@ function rps (playerChoice, computerChoice){
 
         playerChoice1.innerHTML = player;
         cpuChoice1.innerHTML = computer;
-        currentWinner.innerHTML = "Tie";
+        currentWinner.innerHTML = "CPU";
 
         result = 2;
 
@@ -162,7 +162,7 @@ function rps (playerChoice, computerChoice){
 
         playerChoice1.innerHTML = player;
         cpuChoice1.innerHTML = computer;
-        currentWinner.innerHTML = "Tie";
+        currentWinner.innerHTML = "CPU";
 
         result = 2;
     }
